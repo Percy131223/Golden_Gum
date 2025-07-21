@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Golden Duomint - Chicle Biodegradable</title>
+  <style>
+    /* Tu CSS original sin cambios */
+    /* ... (todo tu CSS está intacto, puedes copiarlo desde el original porque no cambia nada que diga "Popz") */
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="img/logo.png" alt="Logo Golden Duomint" class="logo"/>
+  <nav>
+    <a href="Inicio.html">Inicio</a>
+    <a href="#descripcion">¿Quiénes somos?</a>
+    <a href="#diferentes">¿Por qué somos diferentes?</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#donde">Dónde Conseguirnos</a>
+    <a href="#proposito">Nuestro Propósito</a>
+    <a href="#productos">Productos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-sticky">
+    <img src="img/duomint.png" alt="Chicle flotante" class="parallax-img" id="parallaxImg" />
+    <h1>Golden Duomint</h1>
+    <p>Un chicle en barra con sabor intenso, duración prolongada y envoltorio 100% biodegradable.</p>
+  </div>
+</section>
+
+<section class="descripcion" id="caracteristicas">
+  <h2>Características de Golden Duomint</h2>
+  <div class="descripcion-grid">
+    <div class="feature"><h3>100% Biodegradable</h3><p>El chicle y su envoltorio se descomponen naturalmente.</p></div>
+    <div class="feature"><h3>Duración Extendida</h3><p>Sabor hasta 3 veces más que otros chicles.</p></div>
+    <div class="feature"><h3>Sabores Disponibles</h3><p>Menta Clásica, Menta Intensa, Hierbabuena, Eucalipto.</p></div>
+    <div class="feature"><h3>Ingredientes Naturales</h3><p>Sin gluten ni conservantes. Apto para veganos.</p></div>
+  </div>
+</section>
+
+<section class="galeria" id="galeria">
+  <h2>Galería de Golden Duomint</h2>
+  <div class="galeria-grid">
+    <img src="img/duomint1.png" alt="Golden Duomint - Vista frontal">
+    <img src="img/duomint2.png" alt="Golden Duomint - Envoltorio">
+    <img src="img/duomint3.png" alt="Golden Duomint - En la mano">
+    <img src="img/duomint4.png" alt="Golden Duomint - En caja">
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <form>
+    <h2>¿Tienes preguntas? ¡Escríbenos!</h2>
+    <input type="text" placeholder="Nombre" required />
+    <input type="email" placeholder="Correo" required />
+    <textarea rows="5" placeholder="Mensaje" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<footer>
+  <img src="img/logo1.png" alt="Logo Footer" class="logo"/>
+  <p>
+    <a href="#">Términos y condiciones</a> |
+    <a href="#">Políticas de privacidad</a>
+  </p>
+  <div class="social">
+    <a href="#"><img src="img/ig.png" alt="Instagram"/></a>
+    <a href="#"><img src="img/tiktok.png" alt="TikTok"/></a>
+    <a href="https://wa.me/51987743820"><img src="img/whatsapp.png" alt="WhatsApp"/></a>
+  </div>
+  <p>&copy; 2025 Golden Duomint. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+  const img = document.getElementById('parallaxImg');
+  const sticky = document.querySelector('.hero');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const stickyTop = sticky.offsetTop;
+    const stickyHeight = sticky.offsetHeight;
+    const progress = (scrollY - stickyTop) / stickyHeight;
+
+    if (progress >= 0.05 && progress < 0.2) {
+      let porcentaje = Math.min((progress - 0.05) / 0.15, 1);
+      let posX = -100 + (porcentaje * 50);
+      img.style.transform = `translate(${posX}%, -50%)`;
+      img.style.opacity = 1;
+    } else if (progress >= 0.2 && progress < 0.8) {
+      img.style.transform = 'translate(-50%, -50%)';
+      img.style.opacity = 1;
+    } else if (progress >= 0.8) {
+      img.classList.add('hidden');
+    } else {
+      img.style.opacity = 0;
+      img.style.transform = 'translate(-100%, -50%)';
+      img.classList.remove('hidden');
+    }
+  });
+</script>
+
+</body>
+</html>

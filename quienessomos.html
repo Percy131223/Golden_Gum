@@ -1,0 +1,338 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¿Quiénes Somos? - Golden Gum</title>
+  <style>
+    /* Reset y base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* Navegación fija */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    header img.logo {
+      width: 200px;
+      height: 60px;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00a859;
+    }
+
+    /* Sección de equipo */
+    .team-section {
+      padding: 80px 20px;
+      background-color: #f9f9f9;
+    }
+    .team-section h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 60px;
+      color: #333;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .team-card {
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+    .team-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      overflow: hidden;
+    }
+    .team-image img,
+    .team-image span {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      font-size: 24px;
+      color: #aaa;
+    }
+    .team-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .team-role {
+      color: #00a859;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    .team-description {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .whatsapp-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .whatsapp-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+    .whatsapp-button svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer img.logo {
+      width: 120px;
+      height: 40px;
+      margin-bottom: 15px;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #00a859;
+    }
+    footer .social {
+      margin: 15px 0;
+    }
+    footer .social img {
+      width: 24px;
+      height: 24px;
+      margin: 0 8px;
+      vertical-align: middle;
+    }
+    footer p {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    /* Animaciones */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header>
+    <img src="img/logo.png" alt="Logo Golden Gum" class="logo"/>
+    <nav>
+      <a href="Inicio.html">Inicio</a>
+      <a href="quienessomos.html" class="active">¿Quiénes somos?</a>
+      <a href="porquesomosdiferentes.html">¿Por qué somos diferentes?</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="dondeconseguirnos.html">Dónde Conseguirnos</a>
+      <a href="nuestroproposito.html">Nuestro Propósito</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Sección de Equipo -->
+  <section class="team-section">
+    <h2>Conoce a nuestro equipo</h2>
+    <div class="team-grid">
+      <!-- Miembro 1 -->
+      <div class="team-card animate-fade-in-up">
+        <div class="team-image">
+          <img src="img/jesus.png" alt="Foto de Calero Romero Jesus Percy" />
+        </div>
+        <div class="team-name">Calero Romero Jesus Percy</div>
+        <div class="team-role">Fundador & CEO</div>
+        <div class="team-description">
+          Líder visionario con pasión por la innovación sostenible y el desarrollo de productos eco-friendly.
+        </div>
+        <a href="https://wa.me/51987743820" target="_blank" class="whatsapp-button">
+          <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.199.297-.767.966-.941 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.15-.174.2-.298.3-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.007-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.07 1.035-1.07 2.468 1.045 2.872 1.22 3.12.712.992 2.523 1.654c1.47.522 2.692.207 3.046.107.353-.099 1.148-.462 1.321-.915.173-.451.173-1.054.123-1.153Z" />
+            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0Zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10Z" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Miembro 2 -->
+      <div class="team-card animate-fade-in-up" style="animation-delay: 0.2s;">
+        <div class="team-image">
+          <img src="img/angelo.png" alt="Foto de Aparcana Anyosa Angelo Alexander" />
+        </div>
+        <div class="team-name">Aparcana Anyosa Angelo Alexander</div>
+        <div class="team-role">Co-Fundador & CTO</div>
+        <div class="team-description">
+          Experto en desarrollo tecnológico y sostenibilidad digital, impulsor de soluciones innovadoras.
+        </div>
+        <a href="https://wa.me/51987743820" target="_blank" class="whatsapp-button">
+          <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.199.297-.767.966-.941 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.15-.174.2-.298.3-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.007-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.07 1.035-1.07 2.468 1.045 2.872 1.22 3.12.712.992 2.523 1.654c1.47.522 2.692.207 3.046.107.353-.099 1.148-.462 1.321-.915.173-.451.173-1.054.123-1.153Z" />
+            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0Zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10Z" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Miembro 3 -->
+      <div class="team-card animate-fade-in-up" style="animation-delay: 0.4s;">
+        <div class="team-image">
+          <img src="img/benja.png" alt="Foto de Linares Euribe Benjhamin Mijael" />
+        </div>
+        <div class="team-name">Linares Euribe Benjhamin Mijael</div>
+        <div class="team-role">Director de Marketing</div>
+        <div class="team-description">
+          Creativo apasionado por conectar con las personas y construir marcas con propósito e impacto.
+        </div>
+        <a href="https://wa.me/51987743820" target="_blank" class="whatsapp-button">
+          <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.199.297-.767.966-.941 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.15-.174.2-.298.3-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.007-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.07 1.035-1.07 2.468 1.045 2.872 1.22 3.12.712.992 2.523 1.654c1.47.522 2.692.207 3.046.107.353-.099 1.148-.462 1.321-.915.173-.451.173-1.054.123-1.153Z" />
+            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0Zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10Z" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Miembro 4 -->
+      <div class="team-card animate-fade-in-up" style="animation-delay: 0.6s;">
+        <div class="team-image">
+          <img src="img/jose.png" alt="Foto de Valencia Luna Jose Emanuel" />
+        </div>
+        <div class="team-name">Valencia Luna Jose Emanuel</div>
+        <div class="team-role">Director de Operaciones</div>
+        <div class="team-description">
+          Apasionado por la logística sostenible y la gestión eficiente de recursos en cada etapa del producto.
+        </div>
+        <a href="https://wa.me/51987743820" target="_blank" class="whatsapp-button">
+          <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.199.297-.767.966-.941 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.15-.174.2-.298.3-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.007-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.07 1.035-1.07 2.468 1.045 2.872 1.22 3.12.712.992 2.523 1.654c1.47.522 2.692.207 3.046.107.353-.099 1.148-.462 1.321-.915.173-.451.173-1.054.123-1.153Z" />
+            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0Zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10Z" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Miembro 5 -->
+      <div class="team-card animate-fade-in-up" style="animation-delay: 0.8s;">
+        <div class="team-image">
+          <img src="img/alejandro.png" alt="Foto de Mendoza Calderon Alejandro Leonardo" />
+        </div>
+        <div class="team-name">Mendoza Calderon Alejandro Leonardo</div>
+        <div class="team-role">Director de Desarrollo</div>
+        <div class="team-description">
+          Innovador en productos sostenibles y procesos de fabricación eco-amigables, comprometido con el medio ambiente.
+        </div>
+        <a href="https://wa.me/51987743820" target="_blank" class="whatsapp-button">
+          <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.199.297-.767.966-.941 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.15-.174.2-.298.3-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.007-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.07 1.035-1.07 2.468 1.045 2.872 1.22 3.12.712.992 2.523 1.654c1.47.522 2.692.207 3.046.107.353-.099 1.148-.462 1.321-.915.173-.451.173-1.054.123-1.153Z" />
+            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0Zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10Z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <img src="img/logo1.png" alt="Logo Footer" class="logo"/>
+    <p>
+      <a href="#">Términos y condiciones</a> |
+      <a href="#">Políticas de privacidad</a>
+    </p>
+    <div class="social">
+      <a href="#"><img src="img/ig.png" alt="Instagram"/></a>
+      <a href="#"><img src="img/tiktok.png" alt="TikTok"/></a>
+      <a href="https://wa.me/51987743820"><img src="img/whatsapp.png" alt="WhatsApp"/></a>
+    </div>
+    <p>&copy; 2025 Golden Gum. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Animación de scroll para las tarjetas del equipo
+    document.addEventListener("DOMContentLoaded", function () {
+      const cards = document.querySelectorAll(".team-card");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in-up");
+          }
+        });
+      }, { threshold: 0.1 });
+
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
+</body>
+</html>
+```

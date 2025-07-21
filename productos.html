@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productos - Golden Gum</title>
+  <style>
+    /* Reset y base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+    /* Navegación fija */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    header img.logo {
+      width: 200px;
+      height: 60px;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00a859;
+    }
+    /* Sección de productos */
+    .productos {
+      padding: 60px 20px;
+      background: #fff;
+    }
+    .productos h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .productos .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .producto {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .producto:hover {
+      transform: translateY(-5px);
+    }
+    .producto img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+    .producto h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .producto ul {
+      list-style: none;
+      padding: 0;
+    }
+    .producto li {
+      margin: 5px 0;
+    }
+    /* Footer */
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer img.logo {
+      width: 120px;
+      height: 40px;
+      margin-bottom: 15px;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #00a859;
+    }
+    footer .social {
+      margin: 15px 0;
+    }
+    footer .social img {
+      width: 24px;
+      height: 24px;
+      margin: 0 8px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header>
+    <img src="img/logo.png" alt="Logo Golden Gum" class="logo"/>
+    <nav>
+      <a href="Inicio.html">Inicio</a>
+      <a href="quienessomos.html">¿Quiénes somos?</a>
+      <a href="porquesomosdiferentes.html">¿Por qué somos diferentes?</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="dondeconseguirnos.html">Dónde Conseguirnos</a>
+      <a href="nuestroproposito.html">Nuestro Propósito</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Sección de Productos -->
+  <section class="productos">
+    <h2>Nuestros Productos</h2>
+    <div class="grid">
+      <div class="producto">
+        <img src="img/stick1.png" alt="Chicle en barra" />
+        <h3>Golden Stick</h3>
+        <ul>
+          <li>Mango Tropical</li>
+          <li>Tutti-Frutti</li>
+          <li>Fresa Clásica</li>
+          <li>Sandía Splash</li>
+          <li>Menta Glacial</li>
+        </ul>
+      </div>
+      <div class="producto">
+        <img src="img/popz1.png" alt="Chicle redondo" />
+        <h3>Golden Popz</h3>
+        <ul>
+          <li>Mango Tropical</li>
+          <li>Tutti-Frutti</li>
+          <li>Fresa Clásica</li>
+          <li>Sandía Splash</li>
+          <li>Menta Glacial</li>
+        </ul>
+      </div>
+      <div class="producto">
+        <img src="img/snap1.png" alt="Chicle rectangular" />
+        <h3>Golden Snap</h3>
+        <ul>
+          <li>Mango Tropical</li>
+          <li>Tutti-Frutti</li>
+          <li>Fresa Clásica</li>
+          <li>Sandía Splash</li>
+          <li>Menta Glacial</li>
+        </ul>
+      </div>
+      <div class="producto">
+        <img src="img/duomint1.png" alt="Chicle en caja" />
+        <h3>Golden Duomint</h3>
+        <ul>
+          <li>Mango Tropical Amentolado</li>
+          <li>Tutti-Frutti Amentolado</li>
+          <li>Fresa Clásica Amentolado</li>
+          <li>Sandía Splash Amentolado</li>
+          <li>Menta Glacial Amentolado</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <img src="img/logo1.png" alt="Logo Footer" class="logo"/>
+    <p>
+      <a href="#">Términos y condiciones</a> |
+      <a href="#">Políticas de privacidad</a>
+    </p>
+    <div class="social">
+      <a href="#"><img src="img/ig.png" alt="Instagram"/></a>
+      <a href="#"><img src="img/tiktok.png" alt="TikTok"/></a>
+      <a href="https://wa.me/51987743820 "><img src="img/whatsapp.png" alt="WhatsApp"/></a>
+    </div>
+    <p>&copy; 2025 Golden Gum. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

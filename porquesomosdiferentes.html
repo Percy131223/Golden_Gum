@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¿Por qué somos diferentes? - Golden Gum</title>
+  <style>
+    /* Reset y base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* Navegación fija */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    header img.logo {
+      width: 200px;
+      height: 60px;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00a859;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      background: url('img/fondo_porquesomosdiferentes.png') center/cover no-repeat;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero .content {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+      padding: 40px;
+      border-radius: 16px;
+      max-width: 800px;
+      backdrop-filter: blur(5px);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+    }
+
+    /* Sección destacada */
+    .destacado {
+      padding: 60px 20px;
+      background: #e8f5e9;
+      text-align: center;
+    }
+
+    .destacado h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #007f45;
+    }
+
+    .destacado p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer img.logo {
+      width: 120px;
+      height: 40px;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #00a859;
+    }
+
+    footer .social {
+      margin: 15px 0;
+    }
+
+    footer .social img {
+      width: 24px;
+      height: 24px;
+      margin: 0 8px;
+      vertical-align: middle;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header>
+    <img src="img/logo.png" alt="Logo Golden Gum" class="logo"/>
+    <nav>
+      <a href="Inicio.html">Inicio</a>
+      <a href="quienessomos.html">¿Quiénes somos?</a>
+      <a href="porquesomosdiferentes.html">¿Por qué somos diferentes?</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="dondeconseguirnos.html">Dónde Conseguirnos</a>
+      <a href="nuestroproposito.html">Nuestro Propósito</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="content">
+      <h1>¿Por qué somos diferentes?</h1>
+      <p>En Golden Gum, creemos en ofrecer productos deliciosos, sostenibles y responsables con el planeta. Conoce lo que nos hace únicos.</p>
+    </div>
+  </section>
+
+  <!-- Sección destacada -->
+  <section class="destacado">
+    <h2>🧠 ENFOQUE: DIFERENCIA Y ORIGINALIDAD</h2>
+    <p>"No somos un chicle más, somos la revolución del sabor natural con impacto positivo."</p>
+    <br>
+    <p>Nuestro chicle está hecho con almidón de papa, sin químicos raros ni plástico. Porque masticar rico no debería contaminar el planeta.</p>
+    <br>
+    <p>"Nos atrevimos a cambiar la fórmula: cero plástico, cero culpa, 100% innovación."</p>
+  </section>
+
+  <!-- Sección ecológico -->
+  <section class="destacado">
+    <h2>🌱 ENFOQUE: ECOLÓGICO / RESPONSABLE</h2>
+    <p>"Mientras otros dejan residuos, nosotros dejamos huella verde."</p>
+    <br>
+    <p>Cada chicle que consumes con Golden Gum es un paso hacia un planeta más limpio. Creemos que lo biodegradable también puede ser rico.</p>
+    <br>
+    <p>"Nuestro secreto está en la papa, pero nuestra misión está en la Tierra."</p>
+  </section>
+
+  <!-- Sección sabor -->
+  <section class="destacado">
+    <h2>👄 ENFOQUE: SABOR / EXPERIENCIA</h2>
+    <p>"El sabor no debería costarle nada al planeta."</p>
+    <br>
+    <p>Por eso hicimos un chicle que es sabroso, suave y... compostable.</p>
+    <br>
+    <p>"Masticar nunca se sintió tan natural."</p>
+  </section>
+
+  <!-- Sección tecnología -->
+  <section class="destacado">
+    <h2>⚗️ ENFOQUE: INNOVACIÓN / TECNOLOGÍA</h2>
+    <p>"¿Y si el futuro fuera masticable? Ya lo es."</p>
+    <br>
+    <p>Creamos un chicle que combina ciencia, naturaleza y sabor. Sin plástico, sin culpa.</p>
+    <br>
+    <p>"Innovamos desde la raíz... literal. Del almidón de papa al chicle del futuro."</p>
+  </section>
+
+  <!-- Sección cercano -->
+  <section class="destacado">
+    <h2>💬 ENFOQUE CERCANO / URBANO</h2>
+    <p>"Nosotros no mascamos mentiras, solo sabor natural."</p>
+    <br>
+    <p>¿Plástico en el chicle? Eso ya fue. Lo nuestro es natural desde el núcleo.</p>
+    <br>
+    <p>"La papa no solo se fríe, también se masca."</p>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <img src="img/logo1.png" alt="Logo Footer" class="logo"/>
+    <p>
+      <a href="#">Términos y condiciones</a> |
+      <a href="#">Políticas de privacidad</a>
+    </p>
+    <div class="social">
+      <a href="#"><img src="img/ig.png" alt="Instagram"/></a>
+      <a href="#"><img src="img/tiktok.png" alt="TikTok"/></a>
+      <a href="https://wa.me/51987743820 "><img src="img/whatsapp.png" alt="WhatsApp"/></a>
+    </div>
+    <p>&copy; 2025 Golden Gum. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

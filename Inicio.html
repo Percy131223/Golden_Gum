@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Golden Gum - Chicles Biodegradables</title>
+  <style>
+    /* Reset y base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+    /* Navegación fija */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    header img.logo {
+      width: 200px;
+      height: 60px;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00a859;
+    }
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .slide img {
+      max-width: 60%;
+      height: auto;
+    }
+    .slide h1 {
+      font-size: 2.5rem;
+      margin: 20px 0;
+    }
+    .slide p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .slide .btn {
+      background: #00a859;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .slide .btn:hover {
+      background: #007f45;
+    }
+    .nav-arrows {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 20px;
+      z-index: 2;
+    }
+    .arrow {
+      background: rgba(0,0,0,0.4);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .arrow:hover {
+      background: rgba(0,0,0,0.6);
+    }
+    /* Descripción */
+    .descripcion {
+      padding: 60px 20px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .descripcion::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('img/fondo_descripcion.jpg') center/cover no-repeat;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    .descripcion .content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .descripcion h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .descripcion p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    /* Por qué somos diferentes */
+    .diferentes {
+      padding: 60px 20px;
+      background: #f9f9f9;
+    }
+    .diferentes .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .diferentes .item {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 250px;
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 1s ease;
+    }
+    .diferentes .item.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .diferentes .item img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+    }
+    .diferentes .item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    /* Testimonios */
+    .testimonios {
+      padding: 60px 20px;
+      background: #fff;
+    }
+    .testimonios .slider {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+    .testimonial {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.5s ease-in-out;
+    }
+    .testimonial img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .testimonial p {
+      font-style: italic;
+      max-width: 600px;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 10px;
+    }
+    /* Dónde conseguirnos */
+    .donde {
+      padding: 60px 20px;
+      background: url('img/mapa.jpg') center/cover no-repeat;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      position: relative;
+    }
+    .donde h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .donde p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .donde .floating-btn {
+      display: inline-block;
+      background: rgb(0, 0, 0);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      text-decoration: none;
+    }
+    .donde .floating-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .donde .floating-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+    /* Nuestro propósito */
+    .proposito {
+      padding: 60px 20px;
+      background: url('img/ecologico.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    .proposito::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+    .proposito .content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .proposito h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .proposito p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    /* Productos */
+    .productos {
+      padding: 60px 20px;
+      background: #fff;
+    }
+    .productos .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .producto {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .producto img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+    .producto h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .producto ul {
+      list-style: none;
+      padding: 0;
+    }
+    .producto li {
+      margin: 5px 0;
+    }
+    /* Contacto */
+    .contacto {
+      padding: 60px 20px;
+      background: #f9f9f9;
+    }
+    .contacto form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .contacto input,
+    .contacto textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .contacto button {
+      background: #00a859;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contacto button:hover {
+      background: #007f45;
+    }
+    /* Footer */
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer img.logo {
+      width: 120px;
+      height: 40px;
+      margin-bottom: 15px;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #00a859;
+    }
+    footer .social {
+      margin: 15px 0;
+    }
+    footer .social img {
+      width: 24px;
+      height: 24px;
+      margin: 0 8px;
+      vertical-align: middle;
+    }
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header>
+    <img src="img/logo.png" alt="Logo Golden Gum" class="logo"/>
+    <nav>
+      <a href="Inicio.html">Inicio</a>
+      <a href="quienessomos.html">¿Quiénes somos?</a>
+      <a href="porquesomosdiferentes.html">¿Por qué somos diferentes?</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="dondeconseguirnos.html">Dónde Conseguirnos</a>
+      <a href="nuestroproposito.html">Nuestro Propósito</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+  <!-- Hero Section -->
+  <section class="hero" id="inicio">
+    <div class="slide active">
+      <img src="img/stick.png" alt="Golden Sticks" />
+      <h1>Cinco barras de sabor intenso en un envoltorio 100% biodegradable. Ideal para quienes buscan frescura duradera sin contaminar el planeta.</h1>
+      <p>Dura más. Contamina cero.</p>
+      <a href="#proximohtml" class="btn">Ver más</a>
+    </div>
+    <div class="slide">
+      <img src="img/popz.png" alt="Golden Popz" />
+      <h1>Bolitas explosivas de sabor en un empaque plastificado biodegradable. Perfectas para llevar en el bolsillo y compartir con estilo.</h1>
+      <p>Pequeño tamaño, sabor que revienta.</p>
+      <a href="#prox" class="btn">Ver más</a>
+    </div>
+    <div class="slide">
+      <img src="img/snap.png" alt="Golden Snap" />
+      <h1>Chicles rectangulares individuales envueltos en papel ecológico. Diseño clásico con un giro responsable.</h1>
+      <p>Un clic, un sabor, una elección consciente</p>
+      <a href="#prox" class="btn">Ver más</a>
+    </div>
+    <div class="slide">
+      <img src="img/duomint.png" alt="Golden DuoMint" />
+      <h1>Pastillas dobles en caja biodegradable, combinan la frescura de la menta con frutas deliciosas. El balance perfecto entre sabor y frescura.</h1>
+      <p>La fusión que refresca y cuida el planeta.</p>
+      <a href="#prox" class="btn">Ver más</a>
+    </div>
+    <div class="nav-arrows">
+      <span class="arrow" onclick="prevSlide()">&#10094;</span>
+      <span class="arrow" onclick="nextSlide()">&#10095;</span>
+    </div>
+  </section>
+  <!-- Descripción -->
+  <section class="descripcion" id="descripcion">
+    <div class="content">
+      <h2>Golden Gum</h2>
+      <p>Somos una marca peruana dedicada a crear chicles biodegradables, sin plástico y con sabores naturales. Nuestra misión es cuidar el planeta mientras disfrutas de un snack divertido y sostenible.</p>
+    </div>
+  </section>
+  <!-- ¿Por qué somos diferentes? -->
+  <section class="diferentes" id="diferentes">
+    <div class="grid">
+      <div class="item">
+        <img src="img/icon1.png" alt="Icono biodegradable" />
+        <h3>100% biodegradable</h3>
+      </div>
+      <div class="item">
+        <img src="img/icon2.png" alt="Icono sin plástico" />
+        <h3>Sin plástico</h3>
+      </div>
+      <div class="item">
+        <img src="img/icon3.png" alt="Icono hecho en Perú" />
+        <h3>Hecho en Perú</h3>
+      </div>
+      <div class="item">
+        <img src="img/icon4.png" alt="Icono sabores naturales" />
+        <h3>Sabores naturales</h3>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonios -->
+  <section class="testimonios" id="testimonios">
+    <div class="slider" id="testimonialSlider">
+      <div class="testimonial">
+        <img src="img/user1.png" alt="Usuario 1" />
+        <p>“¡Me encanta el sabor y saber que no estoy contaminando!”</p>
+        <strong>Juan Pérez</strong>
+      </div>
+      <div class="testimonial">
+        <img src="img/user2.png" alt="Usuario 2" />
+        <p>“Es mi chicle favorito, es sostenible y súper rico.”</p>
+        <strong>David Aguilar</strong>
+      </div>
+      <div class="testimonial">
+        <img src="img/user3.png" alt="Usuario 3" />
+        <p>“Perfecto para llevar a todos lados sin sentir culpa.”</p>
+        <strong>Carlos Rojas</strong>
+      </div>
+    </div>
+  </section>
+  <!-- Dónde conseguirnos -->
+  <section class="donde" id="donde">
+    <h2>¡Encuéntranos cerca de ti!</h2>
+    <p>Tenemos puntos de venta en Lima, Cusco y Arequipa.</p>
+    <a href="https://wa.me/51987743820" target="_blank" class="floating-btn">
+      <img src="img/flecha.png" alt="Ubicación" />
+    </a>
+  </section>
+  <!-- Nuestro propósito -->
+  <section class="proposito" id="proposito">
+    <div class="content">
+      <h2>Construimos un futuro más limpio</h2>
+      <p>Cada chicle que consumes con Golden Gum es un paso hacia un planeta más limpio. Creemos en la innovación responsable y en el poder de pequeñas acciones.</p>
+    </div>
+  </section>
+  <!-- Productos -->
+  <section class="productos" id="productos">
+    <div class="grid">
+      <div class="producto">
+        <img src="img/stick1.png" alt="Chicle en barra" />
+        <h3>Golden Stick</h3>
+        <ul>
+          <li>Mango Tropical</li>
+          <li>Tutti-Frutti</li>
+          <li>Fresa Clásica</li>
+          <li>Sandía Splash</li>
+          <li>Menta Glacial</li>
+        </ul>
+      </div>
+      <div class="producto">
+        <img src="img/popz1.png" alt="Chicle redondo" />
+        <h3>Golden Popz</h3>
+        <ul>
+          <li>Mango Tropical</li>
+          <li>Tutti-Frutti</li>
+          <li>Fresa Clásica</li>
+          <li>Sandía Splash</li>
+          <li>Menta Glacial</li>
+        </ul>
+      </div>
+      <div class="producto">
+        <img src="img/snap1.png" alt="Chicle rectangular" />
+        <h3>Golden Snap</h3>
+        <ul>
+          <li>Mango Tropical</li>
+          <li>Tutti-Frutti</li>
+          <li>Fresa Clásica</li>
+          <li>Sandía Splash</li>
+          <li>Menta Glacial</li>
+        </ul>
+      </div>
+      <div class="producto">
+        <img src="img/duomint1.png" alt="Chicle en caja" />
+        <h3>Golden Duomint</h3>
+        <ul>
+          <li>Mango Tropical Amentolado</li>
+          <li>Tutti-Frutti Amentolado</li>
+          <li>Fresa Clásica Amentolado</li>
+          <li>Sandía Splash Amentolado</li>
+          <li>Menta Glacial Amentolado</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- Contacto -->
+  <section class="contacto" id="contacto">
+    <form>
+      <input type="text" placeholder="Nombre" required/>
+      <input type="email" placeholder="Correo" required/>
+      <textarea rows="5" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <img src="img/logo1.png" alt="Logo Footer" class="logo"/>
+    <p>
+      <a href="#">Términos y condiciones</a> |
+      <a href="#">Políticas de privacidad</a>
+    </p>
+    <div class="social">
+      <a href="#"><img src="img/ig.png" alt="Instagram"/></a>
+      <a href="#"><img src="img/tiktok.png" alt="TikTok"/></a>
+      <a href="https://wa.me/51987743820"><img src="img/whatsapp.png" alt="WhatsApp"/></a>
+    </div>
+    <p>&copy; 2025 Golden Gum. Todos los derechos reservados.</p>
+  </footer>
+  <!-- Scripts -->
+  <script>
+    // Carrusel Hero - 5 segundos
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero .slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 5000);
+
+    // Carrusel Testimonios - 5 segundos, sin pausa
+    let testimonialIndex = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+
+    function showTestimonial(index) {
+      testimonials.forEach((t, i) => {
+        t.style.transform = `translateX(${100 * (i - index)}%)`;
+      });
+    }
+
+    function nextTestimonial() {
+      testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+      showTestimonial(testimonialIndex);
+    }
+
+    setInterval(nextTestimonial, 5000);
+
+    // Parallax: ¿Por qué somos diferentes?
+    const items = document.querySelectorAll('.diferentes .item');
+    window.addEventListener('scroll', () => {
+      const triggerBottom = window.innerHeight / 5 * 4;
+      items.forEach(item => {
+        const boxTop = item.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

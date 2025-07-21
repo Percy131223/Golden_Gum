@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dónde Conseguirnos - Golden Gum</title>
+  <style>
+    /* Reset y base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* Navegación fija */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    header img.logo {
+      width: 200px;
+      height: 60px;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00a859;
+    }
+
+    /* Sección principal */
+    .donde-conseguirnos {
+      padding: 120px 20px 80px; /* Ajustado para evitar tapar con el header */
+      text-align: center;
+    }
+    .donde-conseguirnos h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .donde-conseguirnos p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+    .btn-contacto {
+      display: inline-block;
+      background: #00a859;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn-contacto:hover {
+      background: #007f45;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    footer img.logo {
+      width: 120px;
+      height: 40px;
+      margin-bottom: 15px;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #00a859;
+    }
+    footer .social {
+      margin: 15px 0;
+    }
+    footer .social img {
+      width: 24px;
+      height: 24px;
+      margin: 0 8px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header>
+    <img src="img/logo.png" alt="Logo Golden Gum" class="logo"/>
+    <nav>
+      <a href="Inicio.html">Inicio</a>
+      <a href="quienessomos.html">¿Quiénes somos?</a>
+      <a href="porquesomosdiferentes.html">¿Por qué somos diferentes?</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="dondeconseguirnos.html">Dónde Conseguirnos</a>
+      <a href="nuestroproposito.html">Nuestro Propósito</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <section class="donde-conseguirnos">
+    <h1>¡Encuéntranos en cada rincón del Perú!</h1>
+    <p>
+      En Golden Gum nos esforzamos por llevar nuestros chicles biodegradables a cada ciudad y pueblo del país. Ya sea en Lima, Arequipa, Cusco o incluso en regiones más alejadas como Ica, Loreto o Piura, nuestros productos están disponibles en puntos de venta estratégicos y negocios comprometidos con el medio ambiente. Sabemos que cuidar el planeta es tarea de todos, y por eso trabajamos día a día para que puedas disfrutar de un snack fresco, natural y sostenible sin importar dónde estés.
+    </p>
+    <p>
+      Si eres dueño de un negocio, distribuidor o simplemente quieres ofrecer Golden Gum en tu zona, ¡te invitamos a unirte a nuestra red de distribución! Juntos podemos hacer una diferencia real en la reducción de residuos plásticos y promover un consumo responsable en todo el Perú.
+    </p>
+    <a href="contacto.html" class="btn-contacto">Contáctanos para distribución</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <img src="img/logo1.png" alt="Logo Footer" class="logo"/>
+    <p>
+      <a href="#">Términos y condiciones</a> |
+      <a href="#">Políticas de privacidad</a>
+    </p>
+    <div class="social">
+      <a href="#"><img src="img/ig.png" alt="Instagram"/></a>
+      <a href="#"><img src="img/tiktok.png" alt="TikTok"/></a>
+      <a href="https://wa.me/51987743820 "><img src="img/whatsapp.png" alt="WhatsApp"/></a>
+    </div>
+    <p>&copy; 2025 Golden Gum. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
